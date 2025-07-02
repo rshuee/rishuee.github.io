@@ -1,17 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mini Formula 1 Cars</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Driven to Give – 3D Toy Car Project</title>
   <style>
-    body { font-family: Poppings; text-align: center; padding: 40px; }
-    h1 { color: #ff5500; }
-    img { max-width: 400px; margin-top: 20px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ff5e00;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .image-grid img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff5e00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <h1>Driven to Give</h1>
-  <p>I design and donate 3D-printed toy Formula 1 cars to bring smiles to children.</p>
-  <img src="https://via.placeholder.com/400" alt="Sample Toy Car">
-  <p>Learn more soon!</p>
+
+  <header>
+    <h1>Driven to Give</h1>
+    <p>3D-Printed Toy Cars That Inspire Joy and Curiosity</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Our Mission</h2>
+    <p>
+      This summer, I began designing and 3D-printing custom toy cars to donate to children in underserved communities. My goal? To make STEM and design accessible, fun, and meaningful—one toy at a time.
+    </p>
+    <a class="button" href="#gallery">See the Cars</a>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/250x160?text=Car+1" alt="Toy Car 1">
+      <img src="https://via.placeholder.com/250x160?text=Car+2" alt="Toy Car 2">
+      <img src="https://via.placeholder.com/250x160?text=Car+3" alt="Toy Car 3">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About the Project</h2>
+    <p>
+      “Driven to Give” started as a passion for cars, design, and helping others. With each 3D-printed toy, I’ve learned about CAD, materials, and what it means to give back through engineering. I’m continuing to expand this initiative by developing printable kits and STEM-based learning cards for kids to explore how their cars work.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>If you're a school, shelter, or individual who wants to collaborate, contact me at:</p>
+    <p><strong>yourname@example.com</strong></p>
+  </section>
+
+  <footer>
+    © 2025 Driven to Give • Built with ❤️ by a student who loves cars & cares
+  </footer>
+
 </body>
 </html>
