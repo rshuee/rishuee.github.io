@@ -3,113 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Driven to Give – 3D Toy Car Project</title>
+  <title>Driven to Give</title>
   <style>
     :root {
-      --primary-color: #0057b8;
-      --accent-color: #e6f0ff;
-      --text-color: #333;
+      --blue: #0072CE;
+      --light: #F7F9FC;
+      --white: #FFFFFF;
+      --dark: #333;
     }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #ffffff;
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
+      background: var(--light);
+      color: var(--dark);
     }
-
     header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 50px 20px;
+      background: var(--white);
+      padding: 40px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       text-align: center;
     }
+    header h1 { color: var(--blue); font-size: 2.5rem; }
+    header p { color: var(--dark); font-size: 1.2rem; }
 
     nav {
-      background-color: #f4f4f4;
-      text-align: center;
-      padding: 12px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex; justify-content: center;
+      padding: 15px 0; background: var(--white);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky; top: 0; z-index: 10;
     }
-
     nav a {
-      color: var(--primary-color);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      font-size: 1rem;
+      color: var(--dark); margin: 0 20px;
+      text-decoration: none; font-weight: 500;
     }
+    nav a:hover { color: var(--blue); }
 
     section {
-      max-width: 1000px;
-      margin: 50px auto;
+      max-width: 900px;
+      margin: 60px auto;
       padding: 0 20px;
     }
-
     h2 {
-      color: var(--primary-color);
+      color: var(--blue);
       margin-bottom: 20px;
+      font-size: 1.8rem;
     }
+    p { line-height: 1.6; margin-bottom: 20px; }
 
     .button {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--blue);
+      color: var(--white);
       text-decoration: none;
-    }
-
-    .image-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .image-grid img {
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      font-size: 1rem;
     }
 
     #impact {
-      background-color: var(--accent-color);
+      background: var(--white);
+      padding: 50px 20px;
+      border-radius: 8px;
       text-align: center;
-      padding: 60px 20px;
-      border-radius: 10px;
-      margin-bottom: 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-top: -40px;
     }
-
-    #impact h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
+    #impact h2 { font-size: 2.2rem; }
     #impact p {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: var(--primary-color);
+      font-size: 2rem; font-weight: bold;
+      color: var(--blue); margin: 15px 0;
     }
 
     #journey .card {
-      background-color: #f9f9f9;
-      border-left: 4px solid var(--primary-color);
+      background: var(--white);
       padding: 20px;
+      border-left: 4px solid var(--blue);
+      border-radius: 5px;
       margin-bottom: 20px;
-      border-radius: 8px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+    #journey .card strong { color: var(--blue); }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+      gap: 20px; margin-top: 20px;
+    }
+    .image-grid img {
+      width: 100%; border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     footer {
-      background-color: #f2f2f2;
+      background: var(--white);
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
-      color: #555;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: var(--dark);
+      box-shadow: 0 -1px 3px rgba(0,0,0,0.05);
     }
   </style>
 </head>
@@ -117,7 +109,7 @@
 
   <header>
     <h1>Driven to Give</h1>
-    <p>3D-Printed Toy Cars That Inspire Joy and Curiosity</p>
+    <p>3D-Printed Toy Cars That Inspire Joy, Learning, and Curiosity</p>
   </header>
 
   <nav>
@@ -131,9 +123,7 @@
 
   <section>
     <h2>Our Mission</h2>
-    <p>
-      This summer, I began designing and 3D-printing custom toy cars to donate to children in underserved communities. My goal? To make STEM and design accessible, fun, and meaningful—one toy at a time.
-    </p>
+    <p>This summer, I began designing and 3D-printing custom toy cars to donate to children in underserved communities. My goal? To make STEM and design accessible, fun, and meaningful—one toy at a time.</p>
     <a class="button" href="#gallery">See the Cars</a>
   </section>
 
@@ -147,41 +137,39 @@
     <h2>My Journey</h2>
 
     <div class="card">
-      <p><strong>Getting Started:</strong> I used Tinkercad to design a Formula 1-inspired toy car, learning about modeling, safety, and scaling for child-friendly use. I used the Brampton Library Makerspace to print my first prototypes using yellow filament.</p>
+      <p><strong>Getting Started:</strong> I used Tinkercad to design a Formula 1-inspired toy car, learning modeling, safety, and child-friendly scaling. I printed my first prototypes at the Brampton Library Makerspace.</p>
     </div>
 
     <div class="card">
-      <p><strong>Challenges:</strong> Each print took 3 hours, and the printer worked on a first-come-first-serve basis. I had to scale down the design by 55% and optimize support placement to save time and material while maintaining structure.</p>
+      <p><strong>Facing Challenges:</strong> Each print took 3 hours and printers were busy. I scaled models down 55% and optimized print supports to reduce time and waste.</p>
     </div>
 
     <div class="card">
-      <p><strong>Donation Day:</strong> After emailing King Academy Child Care Centre, I donated 3 packaged cars. Seeing the cars bring joy to real kids reminded me why I started this in the first place.</p>
+      <p><strong>Donation Day:</strong> After emailing King Academy Child Care Centre, I dropped off 3 packaged cars. Seeing kids play with them reminded me why I started.</p>
     </div>
 
     <div class="card">
-      <p><strong>Sustainability & Design:</strong> I minimized waste by reinforcing weak points and using cross-hatch interiors to reduce plastic. I filed sharp edges and kept weight light for safety. The result: a durable, safe, and fun toy car built with care.</p>
+      <p><strong>Sustainability:</strong> I minimized plastic by designing cross-hatch interiors, reinforcing weak points, and filing edges. The result: lightweight, safe, and durable toy cars built with care.</p>
     </div>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="image-grid">
-      <img src="https://via.placeholder.com/250x160?text=Car+1" alt="Toy Car 1" />
-      <img src="https://via.placeholder.com/250x160?text=Car+2" alt="Toy Car 2" />
-      <img src="https://via.placeholder.com/250x160?text=Car+3" alt="Toy Car 3" />
+      <img src="https://via.placeholder.com/300x180?text=Car+1" alt="Toy Car 1" />
+      <img src="https://via.placeholder.com/300x180?text=Car+2" alt="Toy Car 2" />
+      <img src="https://via.placeholder.com/300x180?text=Car+3" alt="Toy Car 3" />
     </div>
   </section>
 
   <section id="about">
     <h2>About the Project</h2>
-    <p>
-      “Driven to Give” started as a passion for cars, design, and helping others. With each 3D-printed toy, I’ve learned about CAD, materials, and what it means to give back through engineering. I’m continuing to expand this initiative by developing printable kits and STEM-based learning cards for kids to explore how their cars work.
-    </p>
+    <p>“Driven to Give” started as a passion for cars, design, and helping others. With each 3D-printed toy, I’ve learned about CAD, materials, sustainability, and what it means to give back through engineering. I’m continuing to expand this initiative by creating printable kits and STEM prompt cards for kids.</p>
   </section>
 
   <section id="contact">
     <h2>Get in Touch</h2>
-    <p>If you're a school, shelter, or individual who wants to collaborate, contact me at:</p>
+    <p>If you're a school, shelter, or parent who wants to collaborate, email me at:</p>
     <p><strong>yourname@example.com</strong></p>
   </section>
 
