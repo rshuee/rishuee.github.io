@@ -9,91 +9,155 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f9fafc;
-      color: #111827;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #e0f2fe;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #0c4a6e;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #334155;
+      background: linear-gradient(to bottom right, #f8fbff, #eef4f9);
+      color: #0f172a;
     }
     nav {
-      background: #ffffff;
-      padding: 12px 20px;
+      background: white;
       display: flex;
       justify-content: center;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      padding: 16px 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 100;
     }
     nav a {
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
+      font-weight: 600;
       color: #0f172a;
-      font-weight: 500;
+      transition: color 0.3s;
     }
     nav a:hover {
       color: #0284c7;
     }
+    header {
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1603932947557-6c2fefce22b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      animation-delay: 0.3s;
+    }
+    header p {
+      font-size: 1.3rem;
+      animation-delay: 0.6s;
+    }
     .section {
-      max-width: 900px;
-      margin: 60px auto;
+      max-width: 1100px;
+      margin: 80px auto;
       padding: 0 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
     .stats {
       display: flex;
-      justify-content: space-around;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 40px 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
-    .stat {
+      justify-content: center;
+      gap: 60px;
       text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transform: translateY(20px);
+      animation: slideUp 1s ease forwards;
     }
     .stat h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #0284c7;
-      margin-bottom: 8px;
     }
     .stat p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #64748b;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
     .card {
       background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 4px solid #0284c7;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      opacity: 0;
+      animation: fadeInCard 1s ease forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    .card:hover {
+      transform: translateY(-4px);
     }
     .card strong {
       color: #0284c7;
     }
-    footer {
-      background: #e2e8f0;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
+    .card p {
+      margin-top: 10px;
       color: #475569;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: #f1f5f9;
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInCard {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="#impact">Impact</a>
     <a href="#journey">Journey</a>
@@ -102,7 +166,7 @@
 
   <header>
     <h1>Driven to Give</h1>
-    <p>Bringing smiles to kids with 3D-printed Formula 1 toy cars</p>
+    <p>Empowering children with creativity and compassion through 3D-printed Formula 1 toy cars</p>
   </header>
 
   <section id="impact" class="section">
@@ -113,36 +177,40 @@
       </div>
       <div class="stat">
         <h2>25+</h2>
-        <p>Children Impacted</p>
+        <p>Children Reached</p>
       </div>
     </div>
   </section>
 
   <section id="journey" class="section">
-    <h2 style="color: #0c4a6e; margin-bottom: 20px;">My Journey</h2>
-
-    <div class="card">
-      <p><strong>Designing:</strong> I started by modeling F1 toy cars in Tinkercad. I chose simplified shapes to make them safer and child-friendly.</p>
-    </div>
-    <div class="card">
-      <p><strong>Printing:</strong> I used the Brampton Library’s Ultimaker 2+ printer, working around time limits and support structure challenges.</p>
-    </div>
-    <div class="card">
-      <p><strong>Packaging & Donation:</strong> Each car was filed for smoothness, packaged, and delivered to King Academy daycare after email outreach.</p>
-    </div>
-    <div class="card">
-      <p><strong>Sustainability:</strong> I minimized waste by adjusting support structures and internal fill. Cars were made light and durable with eco in mind.</p>
+    <h2 style="color:#0c4a6e; margin-bottom: 20px; font-size:2rem;">My Journey</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>Designing the Cars</strong>
+        <p>Using Tinkercad, I created a simplified and safe F1 car model suitable for children ages 4–12.</p>
+      </div>
+      <div class="card">
+        <strong>3D Printing</strong>
+        <p>Faced with printer time limits, I printed each car over 3-hour intervals using Brampton Library's Ultimaker 2+.</p>
+      </div>
+      <div class="card">
+        <strong>Sustainability</strong>
+        <p>I reduced plastic waste by optimizing support structures and internal fills while maintaining durability.</p>
+      </div>
+      <div class="card">
+        <strong>Donation</strong>
+        <p>After packaging, I donated the cars to King Academy Child Care Centre, bringing joy to young car lovers.</p>
+      </div>
     </div>
   </section>
 
   <section id="about" class="section">
-    <h2 style="color: #0c4a6e; margin-bottom: 20px;">About the Project</h2>
-    <p>This passion project blends my love for cars, design, and giving back. I learned CAD modeling, sustainability practices, and social outreach. My goal is to keep building tools and toys that spark curiosity in kids—and show how engineering can be used for good.</p>
+    <h2 style="color:#0c4a6e; margin-bottom: 20px; font-size:2rem;">About the Project</h2>
+    <p>This initiative reflects my passion for cars, sustainability, and social good. Through 3D design, environmental awareness, and community outreach, I've created a project that merges engineering with empathy—hoping to inspire future creators, just like me.</p>
   </section>
 
   <footer>
-    © 2025 Driven to Give • Built by Risha Kansara
+    © 2025 Driven to Give • Created by Risha Kansara
   </footer>
-
 </body>
 </html>
