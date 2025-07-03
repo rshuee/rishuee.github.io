@@ -5,38 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Driven to Give – 3D Toy Car Project</title>
   <style>
+    :root {
+      --primary-color: #0057b8;
+      --accent-color: #e6f0ff;
+      --text-color: #333;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: #ffffff;
+      color: var(--text-color);
       margin: 0;
       padding: 0;
     }
 
     header {
-      background-color: #ff5e00;
+      background-color: var(--primary-color);
       color: white;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     nav {
-      background-color: #333;
+      background-color: #f4f4f4;
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     nav a {
-      color: white;
+      color: var(--primary-color);
       text-decoration: none;
       margin: 0 15px;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 1rem;
     }
 
     section {
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 1000px;
+      margin: 50px auto;
       padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-decoration: none;
     }
 
     .image-grid {
@@ -52,27 +76,40 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ff5e00;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      text-decoration: none;
+    #impact {
+      background-color: var(--accent-color);
+      text-align: center;
+      padding: 60px 20px;
+      border-radius: 10px;
+      margin-bottom: 60px;
+    }
+
+    #impact h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    #impact p {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    #journey .card {
+      background-color: #f9f9f9;
+      border-left: 4px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     }
 
     footer {
-      background-color: #eee;
+      background-color: #f2f2f2;
       text-align: center;
       padding: 20px;
-      margin-top: 60px;
       font-size: 0.9em;
-    }
-
-    h2 {
-      color: #ff5e00;
+      color: #555;
     }
   </style>
 </head>
@@ -102,26 +139,28 @@
 
   <section id="impact">
     <h2>Our Impact</h2>
-    <p>
-      <strong>30+</strong> cars 3D printed and donated<br />
-      <strong>25+</strong> children reached with hands-on car play and design
-    </p>
+    <p>30+ Cars Donated</p>
+    <p>25+ Children Reached</p>
   </section>
 
   <section id="journey">
     <h2>My Journey</h2>
-    <p>
-      This project began with a simple idea: combine my love for Formula 1 and design with a way to help kids smile. I learned how to use Tinkercad to 3D model a car, and printed my first prototype using the Brampton Library’s Makerspace. Over time, I scaled the model, refined it, and ensured it was safe and fun for children.
-    </p>
-    <p>
-      I faced real obstacles—each car took nearly 3 hours to print, and the printer was often booked. Still, I managed to create and package 3 working models and reached out to King Academy Child Care Centre to donate them. After confirming by email, I officially delivered the cars, seeing them bring joy to real kids.
-    </p>
-    <p>
-      I also reflected on every aspect of the design: how to make it lightweight and safe, how to reduce plastic waste during printing, and how to cater the form factor to young children. Using techniques like cross-hatching and reinforced wings, I minimized material use and maximized durability. With bright colors, smoothed edges, and functional wheels, each car represents thoughtful engineering.
-    </p>
-    <p>
-      From rough sketches and CAD software to printed models in kids' hands, this journey taught me the value of persistence, problem-solving, and purpose-driven design.
-    </p>
+
+    <div class="card">
+      <p><strong>Getting Started:</strong> I used Tinkercad to design a Formula 1-inspired toy car, learning about modeling, safety, and scaling for child-friendly use. I used the Brampton Library Makerspace to print my first prototypes using yellow filament.</p>
+    </div>
+
+    <div class="card">
+      <p><strong>Challenges:</strong> Each print took 3 hours, and the printer worked on a first-come-first-serve basis. I had to scale down the design by 55% and optimize support placement to save time and material while maintaining structure.</p>
+    </div>
+
+    <div class="card">
+      <p><strong>Donation Day:</strong> After emailing King Academy Child Care Centre, I donated 3 packaged cars. Seeing the cars bring joy to real kids reminded me why I started this in the first place.</p>
+    </div>
+
+    <div class="card">
+      <p><strong>Sustainability & Design:</strong> I minimized waste by reinforcing weak points and using cross-hatch interiors to reduce plastic. I filed sharp edges and kept weight light for safety. The result: a durable, safe, and fun toy car built with care.</p>
+    </div>
   </section>
 
   <section id="gallery">
